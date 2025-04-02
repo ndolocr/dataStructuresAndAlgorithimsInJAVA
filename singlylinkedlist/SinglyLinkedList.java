@@ -1,30 +1,22 @@
 package singlylinkedlist;
 
 public class SinglyLinkedList {
+    private Node head;
 
-    private ListNode head;
-
-    private static class ListNode{
-        private int data;
-        private ListNode next;
-
-        private ListNode(int data){
-            this.data = data;
-            this.next = null;
-        }
+    public SinglyLinkedList(Node headNode){
+        this.head = headNode;
     }
 
-    public static void main(String[] args) {
-        SinglyLinkedList ssl = new SinglyLinkedList();
-        ssl.head = new ListNode(10);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(8);
-        ListNode fourth = new ListNode(11);
+    public String printLinkedList(){
+        String output = "";
+        Node currentNode = head;
+        while(currentNode != null){
+            output = output + currentNode.getNum() + " --> ";
+            currentNode = currentNode.getNextPointer();
+        }
 
-        ssl.head.next = second;
-        second.next = third;
-        third.next = fourth;
+        output = output + " null";
 
-        System.out.println(ssl);
+        return output;
     }
 }
