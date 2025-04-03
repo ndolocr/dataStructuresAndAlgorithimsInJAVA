@@ -43,9 +43,10 @@ public class MainClass {
 
     public String printStaffArrivalDetails(StaffArrival currentStaffArrival){
         String output = "";
-        while(currentStaffArrival != null){
-            output = output + currentStaffArrival.toString() + " --> ";
-            currentStaffArrival.getNextStaffPointer();
+         StaffArrival curent = currentStaffArrival;
+        while(curent != null){
+            output = output + curent.toString() + " --> ";
+//            curent = curent.getNextStaffPointer();
         }
         output = output + " null";
         return output;
